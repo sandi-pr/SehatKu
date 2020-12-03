@@ -8,7 +8,7 @@ class Homepage extends StatelessWidget {
         appBar: AppBar(
           //leading: new Image.asset("img/rating.png", width: 20.0),
           backgroundColor: Colors.blue[300],
-          title: Text("Home"),
+          title: Text("SehatKu"),
           actions: <Widget>[new Icon(Icons.search)],
         ),
       );
