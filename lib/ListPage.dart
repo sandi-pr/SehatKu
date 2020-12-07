@@ -8,12 +8,13 @@ class Listpage extends StatefulWidget {
 class _ListpageState extends State<Listpage> {
   @override
   Widget build(BuildContext context) {
-     return Scaffold( 
-      appBar: AppBar(
+     return Scaffold(
+       appBar: AppBar(
         title: Text("SehatKu"),
+        backgroundColor: Colors.green,
       ),    
       body: Center(
-        child: Text("Search"),
+        child: Text("List Gejala"),
       ),
     );
   }
