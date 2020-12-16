@@ -53,6 +53,12 @@ flutter:
       - assets/image/nanorobot.png
       - assets/image/pharmacy.png
       - assets/image/search.png
+      - assets/image/batuk_kering.png
+      - assets/image/demam.png
+      - assets/image/pilek.png
+      - assets/image/sakit_kepala.png
+      - assets/image/sakit_tenggorokan.png
+      - assets/image/sesak_nafas.png
 
   #   - images/a_dot_burr.jpeg
   #   - images/a_dot_ham.jpeg
