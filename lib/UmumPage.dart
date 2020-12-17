@@ -10,13 +10,16 @@ class _UmumPageState extends State<UmumPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        body: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: <Widget>[
+      body: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: <Widget>[
           //Banner Header
           Container(
             padding: EdgeInsets.only(
               top: 12,
+            ),
+            margin: EdgeInsets.only(
+              bottom: 40,
             ),
             height: 220,
             width: double.infinity,
@@ -37,25 +40,30 @@ class _UmumPageState extends State<UmumPage> {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
-                Text('Gejala\n      Umum',
-                    style: //textTheme: Theme.of(context).textTheme.headline3.copyWith
-                        (TextStyle(
-                            color: Colors.black,
-                            fontWeight: FontWeight.bold,
-                            fontSize: 30.0))),
+                Text(
+                  'Gejala\n      Umum',
+                  style: Theme.of(context).textTheme.headline4.copyWith(
+                        color: Colors.black,
+                        fontWeight: FontWeight.bold,
+                      ),
+                ),
               ],
             ),
           ),
 
-          //List
+          //List gejala umum
           Container(
-            margin: EdgeInsets.only(top: 25, left: 25, bottom: 10, right: 25),
+            margin: EdgeInsets.symmetric(
+              horizontal: 25,
+              vertical: 8,
+            ),
             height: 60,
             width: double.infinity,
             decoration: BoxDecoration(
               color: Colors.white,
               borderRadius: BorderRadius.circular(25),
               border: Border.all(
+                width: 0.2,
                 color: Color(0xFFE5E5E5),
               ),
               boxShadow: [
@@ -66,8 +74,7 @@ class _UmumPageState extends State<UmumPage> {
                 ),
               ],
             ),
-
-            //Item
+            //item
             child: Row(
               children: <Widget>[
                 //Icon
@@ -79,7 +86,7 @@ class _UmumPageState extends State<UmumPage> {
                   child: Row(
                     children: <Widget>[
                       Image.asset(
-                        "assets/image/fever.png",
+                        "assets/image/demam.png",
                         height: 36,
                       ),
                     ],
@@ -89,8 +96,10 @@ class _UmumPageState extends State<UmumPage> {
                 Container(
                   child: Text(
                     "Demam",
-                    style: //Theme.of(context).textTheme.headline5.copyWith
-                        (TextStyle(fontWeight: FontWeight.w400)),
+                    style: Theme.of(context).textTheme.headline5.copyWith(
+                          fontWeight: FontWeight.w400,
+                          fontSize: 20,
+                        ),
                   ),
                 ),
                 Spacer(),
@@ -102,39 +111,41 @@ class _UmumPageState extends State<UmumPage> {
                   child: IconButton(
                     icon: Icon(Icons.arrow_forward),
                     onPressed: () {
-                      Navigator.pushReplacement(context,
-                          MaterialPageRoute(builder: (context) {
-                        return Detail();
-                      }));
+                      Navigator.push(context,
+                          MaterialPageRoute(builder: (context) => Detail()));
                     },
                   ),
                 ),
               ],
             ),
           ),
+
+          //List gejala umum
           Container(
-              margin: EdgeInsets.symmetric(
-                horizontal: 25,
-                vertical: 8,
+            margin: EdgeInsets.symmetric(
+              horizontal: 25,
+              vertical: 8,
+            ),
+            height: 60,
+            width: double.infinity,
+            decoration: BoxDecoration(
+              color: Colors.white,
+              borderRadius: BorderRadius.circular(25),
+              border: Border.all(
+                width: 0.2,
+                color: Color(0xFFE5E5E5),
               ),
-              height: 60,
-              width: double.infinity,
-              decoration: BoxDecoration(
-                color: Colors.white,
-                borderRadius: BorderRadius.circular(25),
-                border: Border.all(
-                  color: Color(0xFFE5E5E5),
+              boxShadow: [
+                BoxShadow(
+                  offset: Offset(3, 6),
+                  blurRadius: 10,
+                  color: Color(0xFFB7B7B7).withOpacity(.16),
                 ),
-                boxShadow: [
-                  BoxShadow(
-                    offset: Offset(3, 6),
-                    blurRadius: 10,
-                    color: Color(0xFFB7B7B7).withOpacity(.16),
-                  ),
-                ],
-              ),
-              //Item
-              child: Row(children: <Widget>[
+              ],
+            ),
+            //item
+            child: Row(
+              children: <Widget>[
                 //Icon
                 Container(
                   padding: EdgeInsets.only(
@@ -144,7 +155,7 @@ class _UmumPageState extends State<UmumPage> {
                   child: Row(
                     children: <Widget>[
                       Image.asset(
-                        "assets/image/fever.png",
+                        "assets/image/batuk_kering.png",
                         height: 36,
                       ),
                     ],
@@ -153,9 +164,11 @@ class _UmumPageState extends State<UmumPage> {
                 //text
                 Container(
                   child: Text(
-                    "Sakit Kepala",
-                    style: //Theme.of(context).textTheme.headline5.copyWith
-                        (TextStyle(fontWeight: FontWeight.w400)),
+                    "Batuk Kering",
+                    style: Theme.of(context).textTheme.headline5.copyWith(
+                          fontWeight: FontWeight.w400,
+                          fontSize: 20,
+                        ),
                   ),
                 ),
                 Spacer(),
@@ -164,70 +177,88 @@ class _UmumPageState extends State<UmumPage> {
                   margin: EdgeInsets.only(
                     right: 10,
                   ),
-                ),
-              ])
-              ),
-
-               Container(
-              margin: EdgeInsets.symmetric(
-                horizontal: 25,
-                vertical: 8,
-              ),
-              height: 60,
-              width: double.infinity,
-              decoration: BoxDecoration(
-                color: Colors.white,
-                borderRadius: BorderRadius.circular(25),
-                border: Border.all(
-                  color: Color(0xFFE5E5E5),
-                ),
-              ),
-
-              //Item
-              child: Row(
-                children: <Widget>[
-                  //Icon
-                  Container(
-                    padding: EdgeInsets.only(
-                      left: 20,
-                      right: 25,
-                    ),
-                    child: Row(
-                      children: <Widget>[
-                        Image.asset(
-                          "assets/image/fever.png",
-                          height: 36,
-                        ),
-                      ],
-                    ),
-                  ),
-                  //text
-                  Container(
-                    child: Text(
-                      "Sesak Napas",
-                      style: //Theme.of(context).textTheme.headline5.copyWith
-                          (TextStyle(fontWeight: FontWeight.w400)),
-                    ),
-                  ),
-                  Spacer(),
-                  //Arrow
-                  Container(
-                    margin: EdgeInsets.only(
-                      right: 10,
-                    ),
-                    /* child: IconButton(
+                  child: IconButton(
                     icon: Icon(Icons.arrow_forward),
                     onPressed: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) => SecondRoute()),
-                      );
+                      Navigator.push(context,
+                          MaterialPageRoute(builder: (context) => Detail()));
                     },
-                  ),*/
                   ),
-                ],
-              ),
+                ),
+              ],
             ),
-        ]));
+          ),
+
+          //List gejala umum
+          Container(
+            margin: EdgeInsets.symmetric(
+              horizontal: 25,
+              vertical: 8,
+            ),
+            height: 60,
+            width: double.infinity,
+            decoration: BoxDecoration(
+              color: Colors.white,
+              borderRadius: BorderRadius.circular(25),
+              border: Border.all(
+                width: 0.2,
+                color: Color(0xFFE5E5E5),
+              ),
+              boxShadow: [
+                BoxShadow(
+                  offset: Offset(3, 6),
+                  blurRadius: 10,
+                  color: Color(0xFFB7B7B7).withOpacity(.16),
+                ),
+              ],
+            ),
+            //item
+            child: Row(
+              children: <Widget>[
+                //Icon
+                Container(
+                  padding: EdgeInsets.only(
+                    left: 20,
+                    right: 25,
+                  ),
+                  child: Row(
+                    children: <Widget>[
+                      Image.asset(
+                        "assets/image/sesak_nafas.png",
+                        height: 36,
+                      ),
+                    ],
+                  ),
+                ),
+                //text
+                Container(
+                  child: Text(
+                    "Sesak Nafas",
+                    style: Theme.of(context).textTheme.headline5.copyWith(
+                          fontWeight: FontWeight.w400,
+                          fontSize: 20,
+                        ),
+                  ),
+                ),
+                Spacer(),
+                //Arrow
+                Container(
+                  margin: EdgeInsets.only(
+                    right: 10,
+                  ),
+                  child: IconButton(
+                    icon: Icon(Icons.arrow_forward),
+                    onPressed: () {
+                      Navigator.push(context,
+                          MaterialPageRoute(builder: (context) => Detail()));
+                    },
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ],
+      ),
+    );
   }
 }
